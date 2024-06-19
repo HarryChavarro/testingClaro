@@ -1,0 +1,16 @@
+<!--
+  @description       : 
+  @author            : Harlinsson Chavarro (HCH)
+  @email             : Harlinsson.Chavarro.-ND@disney.com
+  @last modified on  : 06-19-2024
+  @last modified by  : Harlinsson Chavarro (HCH)
+-->
+<template>
+    <lightning-card title="Registro" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Nombre" value={name} onchange={handleNameChange}></lightning-input>
+            <lightning-input label="Correo Electrónico" value={email} onchange={handleEmailChange}></lightning-input>
+            <lightning-button label="Guardar" onclick={handleSave}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,34 @@
+<!--
+  @description       : 
+  @author            : Harlinsson Chavarro (HCH)
+  @email             : Harlinsson.Chavarro.-ND@disney.com
+  @last modified on  : 06-19-2024
+  @last modified by  : Harlinsson Chavarro (HCH)
+-->
+<template>
+    <lightning-button label="Crear Tarea" onclick={openModal}></lightning-button>
+    
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Crear Nueva Tarea</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-input label="Asunto" value={subject} onchange={handleSubjectChange}></lightning-input>
+                    <lightning-input type="datetime-local" label="Fecha de Vencimiento" value={dueDate} onchange={handleDueDateChange}></lightning-input>
+                    <lightning-textarea label="Descripción" value={description} onchange={handleDescriptionChange}></lightning-textarea>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancelar" onclick={closeModal}></lightning-button>
+                    <lightning-button variant="brand" label="Guardar" onclick={handleSave}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

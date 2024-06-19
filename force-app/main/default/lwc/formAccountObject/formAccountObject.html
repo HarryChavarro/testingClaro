@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : Harlinsson Chavarro (HCH)
+  @group             : 
+  @last modified on  : 04-12-2024
+  @last modified by  : Harlinsson Chavarro (HCH)
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:portal_roles">
+        <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+        <lightning-record-edit-form
+            object-api-name={objectApiName}
+            onsuccess={handleSuccess}>
+            <lightning-input-field field-name={nameField}> </lightning-input-field>
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    variant="brand"
+                    type="submit"
+                    name="save"
+                    label="Create Record"
+                >
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+        
+    </lightning-card>
+</template>
